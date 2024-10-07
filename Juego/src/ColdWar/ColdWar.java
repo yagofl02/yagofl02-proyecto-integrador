@@ -9,7 +9,7 @@ public class ColdWar {
         // Bucle infinito hasta que se de un valor que finalice el bucle
         while (intentos) {
             Scanner sc2 = new Scanner(System.in);
-            //Confirmacion de la salida del juego
+            // Confirmacion de la salida del juego
             System.out.println("¿Quieres salir? (\u001B[32m1: Si\u001B[0m, \\ NO");
             int opcion2 = sc2.nextInt();
             // Se ejecutara la eleccion del usuario
@@ -39,7 +39,8 @@ public class ColdWar {
         // Sistema para dar a elegir la opcion al usuario
         while (intentos) {
             System.out.println("Bienvenido al Juego de la Guerra Fría!! ");
-            System.out.println("Elige una opción (1. Jugar (2. Reglas del juego (3. Informacion (4.Apartado abierto (5.Salir");
+            System.out.println(
+                    "Elige una opción (1. Jugar (2. Reglas del juego (3. Informacion (4.Apartado abierto (5.Salir");
             opSelec = sc.nextInt();
             // Se selecciona
 
@@ -48,8 +49,8 @@ public class ColdWar {
                 System.out.println(" Comienza el juego");
             }
 
-                // Funcionamiento del juego
-            else if(opSelec == 2){
+            // Funcionamiento del juego
+            else if (opSelec == 2) {
 
                 System.out.println("\33[35mReglas de la partida");
                 System.out.println(
@@ -62,13 +63,11 @@ public class ColdWar {
                                 "el ataque siempre tienen que sumar 50 misiles si no se invalidaria la ronda.\u001B[0m");
             }
 
-
             // Informacion de contacto
 
-            else if(opSelec ==3){
+            else if (opSelec == 3) {
                 String amarillo = "\033[93m";
 
-            
                 String reset = "\033[0m";
 
                 System.out.println(amarillo);
@@ -80,25 +79,18 @@ public class ColdWar {
 
                 System.out.println();
             }
-            //apartado abierto
+            // apartado abierto
 
-           else if(opSelec == 4){      
-            System.out.println("Próximamente");
-           }
+            else if (opSelec == 4) {
+                System.out.println("Próximamente");
+            }
 
-            
-           
-    
-          
             if (!finPrograma()) {
                 intentos = false;
             }
 
         }
- 
 
-
-            sc.close();
-        }
+        sc.close();
     }
-
+}
