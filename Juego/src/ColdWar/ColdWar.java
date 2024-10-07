@@ -39,15 +39,17 @@ public class ColdWar {
         // Sistema para dar a elegir la opcion al usuario
         while (intentos) {
             System.out.println("Bienvenido al Juego de la Guerra Fría!! ");
-            System.out.println("Elige una opción (1. Jugar:");
+            System.out.println("Elige una opción (1. Jugar (2. Reglas del juego (3. Informacion (4.Apartado abierto (5.Salir");
             opSelec = sc.nextInt();
             // Se selecciona
 
             if (opSelec == 1) {
                 System.out.print("Has elegido la opción 1 (Jugar) ->");
                 System.out.println(" Comienza el juego");
+            }
 
                 // Funcionamiento del juego
+            else if(opSelec == 2){
 
                 System.out.println("\33[35mReglas de la partida");
                 System.out.println(
@@ -60,21 +62,34 @@ public class ColdWar {
                                 "el ataque siempre tienen que sumar 50 misiles si no se invalidaria la ronda.\u001B[0m");
             }
 
-            System.out.println();
-            System.out.println("Próximamente");
 
             // Informacion de contacto
-            String amarillo = "\033[93m";
+
+            else if(opSelec ==3){
+                String amarillo = "\033[93m";
 
             
-            String reset = "\033[0m";
+                String reset = "\033[0m";
+
+                System.out.println(amarillo);
+                System.out.println("Autor: Yago Fernandez Loza");
+                System.out.println("Correo: yagofl02@educastur.es");
+                System.out.println("Version actual 1.0");
+                System.out.println(reset);
+                System.out.println();
+
+                System.out.println();
+            }
+            //apartado abierto
+
+           else if(opSelec == 4){      
+            System.out.println("Próximamente");
+           }
+
+            
+           
     
-            System.out.println(amarillo);
-            System.out.println("Autor: Yago Fernandez Loza");
-            System.out.println("Correo: yagofl02@educastur.es");
-            System.out.println("Version actual 1.0");
-            System.out.println(reset);
-            System.out.println();
+          
             if (!finPrograma()) {
                 intentos = false;
             }
