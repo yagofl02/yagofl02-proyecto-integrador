@@ -38,7 +38,7 @@ public class ColdWar {
 
         // Sistema para dar a elegir la opcion al usuario
         while (intentos) {
-            System.out.println("Bienvenido al Juego de la Guerra Fría!! ");
+            System.out.println("Bienvenido a Cold War! ");
             System.out.println(
                     "Elige una opción (1. Jugar (2. Reglas del juego (3. Informacion (4.Apartado abierto (5.Salir");
             opSelec = sc.nextInt();
