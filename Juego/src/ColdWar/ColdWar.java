@@ -45,8 +45,7 @@ public class ColdWar {
             // Se selecciona
 
             if (opSelec == 1) {
-                System.out.print("Has elegido la opción 1 (Jugar) ->");
-                System.out.println(" Comienza el juego");
+                jugar();
             }
 
             // Funcionamiento del juego
@@ -92,5 +91,52 @@ public class ColdWar {
         }
 
         sc.close();
+
+    
     }
+
+    
+   private static void jugar(){
+    System.out.print("Has elegido la opción 1 (Jugar) ->");
+                System.out.println(" Comienza el juego");
+Scanner nm = new Scanner(System.in);
+System.out.println("Introdue el nombre del jugardor");
+
+String jugador = nm.next();
+
+
+                
+    int vidasJ = 200;
+    int vidasM = 200;
+
+    while(vidasJ > 0 && vidasM >0){
+        System.out.println("Que quieres Atacar o Defenderte");
+        int eleccionM = (int) Math.random();
+        int eleccion = nm.nextInt();
+
+if(eleccion == "Atacar"){
+    System.out.println("Elegiste Atacar");
+     vidasM = vidasM-50;
+
+    if (eleccion == "Defenderte"){
+        System.out.println("Has elegido defenderte");
+    }
+    
+    
 }
+if()
+    
+        
+    
+    
+}
+        
+        
+
+    }
+                
+
+
+   }
+    
+
