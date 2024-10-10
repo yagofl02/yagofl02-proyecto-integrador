@@ -94,48 +94,51 @@ public class ColdWar {
 
     }
 
-    private static void jugar() {
+    private static void jugar() { //Clase qu contiene la primera version de lo que seria el juego
         System.out.print("Has elegido la opción 1 (Jugar) ->");
         System.out.println(" Comienza el juego");
         Scanner nm = new Scanner(System.in);
         System.out.println("Introdue el nombre del jugardor");
         String nom = nm.next();
-        System.out.println("El nombre elegido es: "+nom);
+        System.out.println("El nombre elegido es: " + nom); // Eliges el nombre que quieras
         int vidasJ = 200;
         int vidasM = 200;
 
         while (vidasJ > 0 && vidasM > 0) {
-            System.out.println("Que quieres Atacar (1) o Defenderte(2)");
-            int eleccionM = (int) Math.random();
+            System.out.printf("Vidas de %s: %d \n", nom, vidasJ); // El nombre y el numero de vidas qque tienes 
+            System.out.println("Vidas de la maquina: " + vidasM);
+            System.out.println("Que quieres Atacar (1) o Defenderte(2)");// Mensaje de eleccion uqe se repite cada ronda junto a las vidas que teneis ambps
+
             int eleccion = nm.nextInt();
 
             if (eleccion == 1) {
-                System.out.println("Elegiste Atacar");
+                System.out.println("Elegiste Atacar"); //Eleccion 1
                 vidasM = vidasM - 50;
-
-                if (eleccion == 2) {
-                    System.out.println("Has elegido defenderte");
-                }
-                
-
             }
+
+            else if (eleccion == 2) {
+                System.out.println("Has elegido defenderte"); //Eleccion 2
+            }
+
+            int eleccionM = (int) (Math.random() * 2) + 1; //Metodo random pra que la maquina elija un nimero en el que se le suma 1 en caso de que la maquina saque un 0
             if (eleccionM == 1) {
                 System.out.println("La maquina ha elegido atacar");
                 vidasJ = vidasJ - 50;
+            }
 
-                if (eleccionM == 2) {
+            else {
 
-                    System.out.println("La maquina ha elegido defenderse");
+                System.out.println("La maquina ha elegido defenderse"); //Mwnsaje defensa de la maquina
 
-                }
-
+            }
+            if (vidasJ <= 0) { //Fin del bucle while en el que se te dice si ganaste o perdiste la partida
+                System.out.println("Perdiste");
+            } else {
+                System.out.println("Ganaste");
             }
 
         }
-
-
         nm.close();
-
 
     }
 
