@@ -92,51 +92,51 @@ public class ColdWar {
 
         sc.close();
 
-    
     }
 
-    
-   private static void jugar(){
-    System.out.print("Has elegido la opción 1 (Jugar) ->");
-                System.out.println(" Comienza el juego");
-Scanner nm = new Scanner(System.in);
-System.out.println("Introdue el nombre del jugardor");
+    private static void jugar() {
+        System.out.print("Has elegido la opción 1 (Jugar) ->");
+        System.out.println(" Comienza el juego");
+        Scanner nm = new Scanner(System.in);
+        System.out.println("Introdue el nombre del jugardor");
+        String nom = nm.next();
+        System.out.println("El nombre elegido es: "+nom);
+        int vidasJ = 200;
+        int vidasM = 200;
 
-String jugador = nm.next();
+        while (vidasJ > 0 && vidasM > 0) {
+            System.out.println("Que quieres Atacar (1) o Defenderte(2)");
+            int eleccionM = (int) Math.random();
+            int eleccion = nm.nextInt();
 
+            if (eleccion == 1) {
+                System.out.println("Elegiste Atacar");
+                vidasM = vidasM - 50;
 
-                
-    int vidasJ = 200;
-    int vidasM = 200;
-
-    while(vidasJ > 0 && vidasM >0){
-        System.out.println("Que quieres Atacar o Defenderte");
-        int eleccionM = (int) Math.random();
-        int eleccion = nm.nextInt();
-
-if(eleccion == "Atacar"){
-    System.out.println("Elegiste Atacar");
-     vidasM = vidasM-50;
-
-    if (eleccion == "Defenderte"){
-        System.out.println("Has elegido defenderte");
-    }
-    
-    
-}
-if()
-    
-        
-    
-    
-}
-        
-        
-
-    }
+                if (eleccion == 2) {
+                    System.out.println("Has elegido defenderte");
+                }
                 
 
+            }
+            if (eleccionM == 1) {
+                System.out.println("La maquina ha elegido atacar");
+                vidasJ = vidasJ - 50;
 
-   }
-    
+                if (eleccionM == 2) {
 
+                    System.out.println("La maquina ha elegido defenderse");
+
+                }
+
+            }
+
+        }
+
+
+        nm.close();
+
+
+    }
+
+}
