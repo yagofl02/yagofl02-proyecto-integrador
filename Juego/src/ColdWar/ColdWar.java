@@ -33,11 +33,10 @@ public class ColdWar {
     public static void main(String[] args) {
         // Variables y Clases
         int opSelec;
-        boolean intentos = true;
+     
         Scanner sc = new Scanner(System.in);
 
-        // Sistema para dar a elegir la opcion al usuario
-        while (intentos) {
+        do{
             System.out.println("Bienvenido a Cold War! ");
             System.out.println(
                     "Elige una opción (1. Jugar (2. Reglas del juego (3. Informacion (4.Apartado abierto (5.Salir");
@@ -84,11 +83,9 @@ public class ColdWar {
                 System.out.println("Próximamente");
             }
 
-            if (!finPrograma()) {
-                intentos = false;
-            }
+            
 
-        }
+        } while(opSelec !=5);
 
         sc.close();
 
