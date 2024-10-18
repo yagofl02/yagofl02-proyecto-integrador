@@ -133,7 +133,7 @@ public class ColdWar {
             }
             if (vidasJ <= 0) { //Fin del bucle while en el que se te dice si ganaste o perdiste la partida
                 System.out.println("Perdiste");
-            } else {
+            } else if (vidasM <=0) {
                 System.out.println("Ganaste");
             }
 
