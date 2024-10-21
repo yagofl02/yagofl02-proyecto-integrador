@@ -95,62 +95,48 @@ public class ColdWar {
         sc.close();
 
     }
-
-    private static void jugar() { // Clase que contiene la primera version de lo que seria el juego
-        System.out.print("Has elegido la opción 1 (Jugar) ->");
-        System.out.println(" Comienza el juego");
-        Scanner nm = new Scanner(System.in);
-        System.out.println("Introdue el nombre del jugardor");
-        String nom = nm.next();
-        System.out.println("El nombre elegido es: " + nom); // Eliges el nombre que quieras
-        int vidasJ = 200;
-        int vidasM = 200;
-
-        while (vidasJ > 0 && vidasM > 0) {
-            System.out.printf("Vidas de %s: %d \n", nom, vidasJ); // El nombre y el numero de vidas que tienes
-            System.out.println("Vidas de la maquina: " + vidasM);
-            System.out.println("Que quieres Atacar (1) o Defenderte(2)");// Mensaje de eleccion uqe se repite cada ronda
-                                                                         // junto a las vidas que teneis ambps
-
-            int eleccion = nm.nextInt();
-
-            if (eleccion == 1) {
-                System.out.println("Elegiste Atacar"); // Eleccion 1 del jugador
-                vidasM = vidasM - 50;
+            private static void jugar() { // Clase que contiene la primera version de lo que seria el juego
+                System.out.print("Has elegido la opción 1 (Jugar) ->");
+                System.out.println(" Comienza el juego");
+                Scanner nm = new Scanner(System.in);
+                System.out.println("Introduce el nombre de los jugadores");
+                String[] nombres = new String[5];
+                for (int i = 0; i < 5; i++) {
+                    nombres[i] = nm.next();
+                }
+            
+                System.out.printf("Los nombres elegidos son: %s, %s, %s, %s, %s\n", nombres[0], nombres[1], nombres[2], nombres[3], nombres[4]);
+            
+                int[] vidas = {200, 200, 200, 200, 200}; // Vector que almacena las vidas de los jugadores
+            
+                while (vidas[0] > 0 && vidas[1] > 0 && vidas[2] > 0 && vidas[3] > 0 && vidas[4] > 0) {
+                    for (int i = 0; i < 5; i++) {
+                        System.out.printf("Vidas de %s: %d \n", nombres[i], vidas[i]); // El nombre y el número de vidas que tienes
+                    }
+                 
+            
+                    // Cada jugador elige atacar o defenderse
+                    for (int i = 0; i < 5; i++) {
+                        System.out.printf("%s, que quieres hacer? (1) Atacar (2) Defenderte: ", nombres[i]);
+                        int eleccion = nm.nextInt();
+            
+                        int daño = 0;
+                        if (eleccion == 1) {
+                            System.out.println(nombres[i] + " elegiste Atacar"); // Elección 1 del jugador que hace que ataque
+                            daño = 50; 
+                            
+                        } else if (eleccion == 2) {
+                            System.out.println(nombres[i] + " has elegido defenderte"); // Elección 2 del jugadorque hace que se defienda
+                            daño = 25; // Le quitan 25 si alguien decide atacar al jugador
+                        } else {
+                            System.out.println("No es una opción válida");
+                            continue; // Si la elección no es válida, repetir el bucle
+                        }
+            
+                        
+                    }
+                }
+            
+                nm.close();
             }
-
-            else if (eleccion == 2) {
-                System.out.println("Has elegido defenderte"); // Eleccion 2 del jugador
-
-                vidasJ = vidasJ - 25;
-
-            } else
-                System.out.println("no es una opccion");
-
-            int eleccionM = (int) (Math.random() * 2) + 1; // Metodo random pra que la maquina elija un nimero en el que
-                                                           // se le suma 1 en caso de que la maquina saque un 0 y eleva
-                                                           // a 2 para que no sea negativo
-            if (eleccionM == 1) {
-                System.out.println("La maquina ha elegido atacar");
-                vidasJ = vidasJ - 50;
-            }
-
-            else {
-
-                System.out.println("La maquina ha elegido defenderse"); // Mwnsaje defensa de la maquina
-
-                vidasM = vidasM - 25;
-
-            }
-            if (vidasJ <= 0) { // Fin del bucle while en el que se te dice si ganaste o perdiste la partida
-                System.out.println("Perdiste");
-            } else if (vidasM <= 0) {
-                System.out.println("Ganaste");
-            }
-
         }
-        nm.close();
-
-    }
-
-}
