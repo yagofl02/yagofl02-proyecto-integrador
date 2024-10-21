@@ -35,9 +35,10 @@ public class ColdWar {
         int opSelec;
 
         Scanner sc = new Scanner(System.in);
+        System.out.println("Bienvenido a Cold War! ");
 
         do {
-            System.out.println("Bienvenido a Cold War! ");
+            
 
             System.out.println(
                     "------------------------------------------------------------------------------------------");
@@ -80,14 +81,16 @@ public class ColdWar {
                 System.out.println("Correo: yagofl02@educastur.es");
                 System.out.println("Version actual 1.0");
                 System.out.println(reset);
-                System.out.println();
 
+                System.out.println();
                 System.out.println();
             }
             // apartado abierto
 
             else if (opSelec == 4) {
+                System.out.println();
                 System.out.println("Próximamente");
+                System.out.println();
             }
 
         } while (opSelec != 5);
@@ -112,7 +115,7 @@ public class ColdWar {
         while (vidas[0] > 0 && vidas[1] > 0 && vidas[2] > 0 && vidas[3] > 0 && vidas[4] > 0) { // bucle inicial para que finalice el juego (Hay que cambiarlo ya que solo sirve para que pierda 1 jugador)
             System.out.println("---------");
             System.out.println();
-            System.out.printf("RONDA %d\n", ronda); // Mostrar el número de ronda
+            System.out.printf("RONDA %d\n", ronda); // Mostrar el número de ronda en la que estas
             System.out.println(); 
             System.out.println("---------");
             for (int i = 0; i < 5; i++) {
