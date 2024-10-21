@@ -95,48 +95,49 @@ public class ColdWar {
         sc.close();
 
     }
-            private static void jugar() { // Clase que contiene la primera version de lo que seria el juego
-                System.out.print("Has elegido la opción 1 (Jugar) ->");
-                System.out.println(" Comienza el juego");
-                Scanner nm = new Scanner(System.in);
-                System.out.println("Introduce el nombre de los jugadores");
-                String[] nombres = new String[5];
-                for (int i = 0; i < 5; i++) {
-                    nombres[i] = nm.next();
+    private static void jugar() { //clase en la que estaria el juego como tal actualmente
+        System.out.print("Has elegido la opción 1 (Jugar) ->");
+        System.out.println(" Comienza el juego");
+        Scanner nm = new Scanner(System.in); // Clase Scanner para seleccional combre y las eleccciones que realizan los jugadores
+        System.out.println("Introduce el nombre de los jugadores");
+        String[] nombres = new String[5]; // Array donde se almacenan los nombres elegidos por los jugadores 
+        for (int i = 0; i < 5; i++) { // para que no se salgan del array
+            nombres[i] = nm.next();
+        }
+    
+        System.out.printf("Los nombres elegidos son: %s, %s, %s, %s, %s\n", nombres[0], nombres[1], nombres[2], nombres[3], nombres[4]);
+    
+        int[] vidas = {200, 200, 200, 200, 200}; // Vector que almacena las vidas de los jugadores
+    
+        while (vidas[0] > 0 && vidas[1] > 0 && vidas[2] > 0 && vidas[3] > 0 && vidas[4] > 0) { // bucle inicial para que finalice el juego (Hay que cambiarlo ya que solo sirve para que pierda 1 jugador)
+            for (int i = 0; i < 5; i++) {
+                System.out.printf("Vidas de %s: %d \n", nombres[i], vidas[i]); // El nombre y el número de vidas que tiene cada jugador 
+            }
+    
+            System.out.println("Que quieres hacer? (1) Atacar (2) Defenderte");
+            int eleccion = nm.nextInt();
+    
+            if (eleccion == 1) {
+                System.out.println("Elegiste Atacar");
+                System.out.println("¿A qué jugador quieres atacar? (1-5)");
+                int jugadorObjetivo = nm.nextInt() - 1; // Se resta uno para que la eleccion coincida con la que esta en el array
+    
+                if (jugadorObjetivo >= 0 && jugadorObjetivo < 5 && vidas[jugadorObjetivo] > 0) {
+                    int daño = 50; // Suponiendo que el daño de un ataque es 50
+                    vidas[jugadorObjetivo] -= daño; // Reducir la vida del jugador objetivo
+                    System.out.printf("%s ha atacado a %s causando %d de daño.\n", nombres[0], nombres[jugadorObjetivo], daño);
+                } else {
+                    System.out.println("Jugador objetivo no válido o ya está fuera del juego.");
                 }
-            
-                System.out.printf("Los nombres elegidos son: %s, %s, %s, %s, %s\n", nombres[0], nombres[1], nombres[2], nombres[3], nombres[4]);
-            
-                int[] vidas = {200, 200, 200, 200, 200}; // Vector que almacena las vidas de los jugadores
-            
-                while (vidas[0] > 0 && vidas[1] > 0 && vidas[2] > 0 && vidas[3] > 0 && vidas[4] > 0) {
-                    for (int i = 0; i < 5; i++) {
-                        System.out.printf("Vidas de %s: %d \n", nombres[i], vidas[i]); // El nombre y el número de vidas que tienes
-                    }
-                 
-            
-                    // Cada jugador elige atacar o defenderse
-                    for (int i = 0; i < 5; i++) {
-                        System.out.printf("%s, que quieres hacer? (1) Atacar (2) Defenderte: ", nombres[i]);
-                        int eleccion = nm.nextInt();
-            
-                        int daño = 0;
-                        if (eleccion == 1) {
-                            System.out.println(nombres[i] + " elegiste Atacar"); // Elección 1 del jugador que hace que ataque
-                            daño = 50; 
-                            
-                        } else if (eleccion == 2) {
-                            System.out.println(nombres[i] + " has elegido defenderte"); // Elección 2 del jugadorque hace que se defienda
-                            daño = 25; // Le quitan 25 si alguien decide atacar al jugador
-                        } else {
-                            System.out.println("No es una opción válida");
-                            continue; // Si la elección no es válida, repetir el bucle
-                        }
-            
-                        
-                    }
-                }
-            
-                nm.close();
+            } else if (eleccion == 2) {
+                System.out.println("Has elegido defenderte"); // Elección 2 del jugador
+                // No se hace daño al defenderse
+            } else {
+                System.out.println("No es una opción válida");
+                continue; // Si la elección no es válida, repetir el bucle
             }
         }
+    
+        nm.close();
+    }
+}
