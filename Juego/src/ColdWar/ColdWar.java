@@ -108,8 +108,13 @@ public class ColdWar {
         System.out.printf("Los nombres elegidos son: %s, %s, %s, %s, %s\n", nombres[0], nombres[1], nombres[2], nombres[3], nombres[4]);
     
         int[] vidas = {200, 200, 200, 200, 200}; // Vector que almacena las vidas de los jugadores
-    
+    int ronda = 1; //Se inicia el contador de las rondas
         while (vidas[0] > 0 && vidas[1] > 0 && vidas[2] > 0 && vidas[3] > 0 && vidas[4] > 0) { // bucle inicial para que finalice el juego (Hay que cambiarlo ya que solo sirve para que pierda 1 jugador)
+            System.out.println("---------");
+            System.out.println();
+            System.out.printf("RONDA %d\n", ronda); // Mostrar el número de ronda
+            System.out.println(); 
+            System.out.println("---------");
             for (int i = 0; i < 5; i++) {
                 System.out.printf("Vidas de %s: %d \n", nombres[i], vidas[i]); // El nombre y el número de vidas que tiene cada jugador 
             }
@@ -137,6 +142,7 @@ public class ColdWar {
                 System.out.println("No es una opción válida");
                 continue; // Si la elección no es válida, el bucle se repetiria hasta que elijas una eleccion valida
             }
+            ronda ++; // Para que se sume el numero a el numero de ronda por cada iteracion que realice el bucle
         }
     
         nm.close();
