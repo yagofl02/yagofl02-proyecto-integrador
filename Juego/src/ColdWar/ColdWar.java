@@ -33,13 +33,20 @@ public class ColdWar {
     public static void main(String[] args) {
         // Variables y Clases
         int opSelec;
-     
+
         Scanner sc = new Scanner(System.in);
 
-        do{
+        do {
             System.out.println("Bienvenido a Cold War! ");
+
+            System.out.println(
+                    "------------------------------------------------------------------------------------------");
+                    System.out.println();
             System.out.println(
                     "Elige una opción (1. Jugar (2. Reglas del juego (3. Informacion (4.Apartado abierto (5.Salir");
+                    System.out.println();
+            System.out.println(
+                    "------------------------------------------------------------------------------------------");
             opSelec = sc.nextInt();
             // Se selecciona
 
@@ -83,15 +90,13 @@ public class ColdWar {
                 System.out.println("Próximamente");
             }
 
-            
-
-        } while(opSelec !=5);
+        } while (opSelec != 5);
 
         sc.close();
 
     }
 
-    private static void jugar() { //Clase que contiene la primera version de lo que seria el juego
+    private static void jugar() { // Clase que contiene la primera version de lo que seria el juego
         System.out.print("Has elegido la opción 1 (Jugar) ->");
         System.out.println(" Comienza el juego");
         Scanner nm = new Scanner(System.in);
@@ -102,22 +107,29 @@ public class ColdWar {
         int vidasM = 200;
 
         while (vidasJ > 0 && vidasM > 0) {
-            System.out.printf("Vidas de %s: %d \n", nom, vidasJ); // El nombre y el numero de vidas que tienes 
+            System.out.printf("Vidas de %s: %d \n", nom, vidasJ); // El nombre y el numero de vidas que tienes
             System.out.println("Vidas de la maquina: " + vidasM);
-            System.out.println("Que quieres Atacar (1) o Defenderte(2)");// Mensaje de eleccion uqe se repite cada ronda junto a las vidas que teneis ambps
+            System.out.println("Que quieres Atacar (1) o Defenderte(2)");// Mensaje de eleccion uqe se repite cada ronda
+                                                                         // junto a las vidas que teneis ambps
 
             int eleccion = nm.nextInt();
 
             if (eleccion == 1) {
-                System.out.println("Elegiste Atacar"); //Eleccion 1 del jugador
+                System.out.println("Elegiste Atacar"); // Eleccion 1 del jugador
                 vidasM = vidasM - 50;
             }
 
             else if (eleccion == 2) {
-                System.out.println("Has elegido defenderte"); //Eleccion 2 del jugador
-            }
+                System.out.println("Has elegido defenderte"); // Eleccion 2 del jugador
 
-            int eleccionM = (int) (Math.random() * 2) + 1; //Metodo random pra que la maquina elija un nimero en el que se le suma 1 en caso de que la maquina saque un 0 y eleva a 2 para que no sea negativo
+                vidasJ = vidasJ - 25;
+
+            } else
+                System.out.println("no es una opccion");
+
+            int eleccionM = (int) (Math.random() * 2) + 1; // Metodo random pra que la maquina elija un nimero en el que
+                                                           // se le suma 1 en caso de que la maquina saque un 0 y eleva
+                                                           // a 2 para que no sea negativo
             if (eleccionM == 1) {
                 System.out.println("La maquina ha elegido atacar");
                 vidasJ = vidasJ - 50;
@@ -125,12 +137,14 @@ public class ColdWar {
 
             else {
 
-                System.out.println("La maquina ha elegido defenderse"); //Mwnsaje defensa de la maquina
+                System.out.println("La maquina ha elegido defenderse"); // Mwnsaje defensa de la maquina
+
+                vidasM = vidasM - 25;
 
             }
-            if (vidasJ <= 0) { //Fin del bucle while en el que se te dice si ganaste o perdiste la partida
+            if (vidasJ <= 0) { // Fin del bucle while en el que se te dice si ganaste o perdiste la partida
                 System.out.println("Perdiste");
-            } else if (vidasM <=0) {
+            } else if (vidasM <= 0) {
                 System.out.println("Ganaste");
             }
 
