@@ -15,7 +15,7 @@ public class ColdWar {
             // Se ejecutara la eleccion del usuario
             if (opcion2 == 0) {
                 intentos = true;
-                System.out.println("Vuelve Pronto!!");
+                System.out.println("Vuelve Pronto!");
                 break;
             } else if (opcion2 == 1) {
                 intentos = false;
@@ -98,7 +98,7 @@ public class ColdWar {
     private static void jugar() { //clase en la que estaria el juego como tal actualmente
         System.out.print("Has elegido la opción 1 (Jugar) ->");
         System.out.println(" Comienza el juego");
-        Scanner nm = new Scanner(System.in); // Clase Scanner para seleccional combre y las eleccciones que realizan los jugadores
+        Scanner nm = new Scanner(System.in); // Clase Scanner para seleccionar combre y las eleccciones que realizan los jugadores
         System.out.println("Introduce el nombre de los jugadores");
         String[] nombres = new String[5]; // Array donde se almacenan los nombres elegidos por los jugadores 
         for (int i = 0; i < 5; i++) { // para que no se salgan del array
@@ -131,10 +131,11 @@ public class ColdWar {
                 }
             } else if (eleccion == 2) {
                 System.out.println("Has elegido defenderte"); // Elección 2 del jugador
-                // No se hace daño al defenderse
+                // No se hace daño al defenderse por ahora solo por comodidad
+            
             } else {
                 System.out.println("No es una opción válida");
-                continue; // Si la elección no es válida, repetir el bucle
+                continue; // Si la elección no es válida, el bucle se repetiria hasta que elijas una eleccion valida
             }
         }
     
