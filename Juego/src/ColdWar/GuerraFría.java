@@ -90,8 +90,8 @@ public class GuerraFría {
             int vidaInicioRondaJugador5 = vidas[4];
 
             /*
-             * Si solo queda un jugador con vida el jugador
-             * que queda con vida gana
+             Si solo queda un jugador con vida el jugador
+             que queda con vida gana
              */
             if (vivos == 1) {
                 break;
@@ -103,8 +103,8 @@ public class GuerraFría {
             System.out.println("-----------------------------------------------------");
 
             /*
-             * Bucle que pregunta por el numero de misiles con los que quiere atacar el
-             * jugador
+             Bucle que pregunta por el numero de misiles con los que quiere atacar el
+             jugador
              */
             for (int i = 0; i < 5; i++) {
                 if (vidas[i] > 0) { // Ignora los jugadores que ya no estan en la partida ya que no les quedan vidas
@@ -126,9 +126,9 @@ public class GuerraFría {
                             equipos.get(i).setMisilesAtaque(sc.nextInt());
                             if ((equipos.get(i).getMisilesDefensa() * 2)
                                     + equipos.get(i).getMisilesAtaque() != 50) { /*
-                                                                                  * Si no da 50 misiles de forma
-                                                                                  * exacta se le pide que vuelva a poner
-                                                                                  * los misiles que quiere usar
+                                                                                   Si no da 50 misiles de forma
+                                                                                   exacta se le pide que vuelva a poner
+                                                                                  los misiles que quiere usar
                                                                                   */
 
                                 System.out.println("Los misiles usados en ataque y en defensa deben sumar 50");
@@ -233,8 +233,8 @@ public class GuerraFría {
         Scanner sc = new Scanner(System.in);
 
         /*
-         * Eleccion de opcion del usuario dentro de un bucle while para que siga
-         * ejecutandose si no se selecciona cierta opcion
+        Eleccion de opcion del usuario dentro de un bucle while para que siga
+         jecutandose si no se selecciona cierta opcion
          */
 
         System.out.println("Bienvenido al Juego de la Guerra Fría ");
